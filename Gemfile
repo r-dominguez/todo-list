@@ -7,9 +7,11 @@ gem 'jbuilder'
 gem 'pg', '1.5'
 gem 'propshaft'
 gem 'puma', '6.6'
+gem 'redis', '5.4'
 gem 'rails', '8.0.2'
 gem 'rails_admin', '3.3'
-gem 'ransack', '~> 4.0'
+gem 'ransack', '4.3'
+gem 'sidekiq', '8.0.5'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
@@ -44,8 +46,10 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'factory_bot_rails', '6.5'
   gem 'faker', '3.5.2'
+  gem 'letter_opener_web', '3.0'
   gem 'rails-controller-testing', '1.0.5'
   gem 'rspec-rails', '8.0.1'
+  gem 'rspec-sidekiq', '5.1'
   gem 'rubocop', '1.75.2'
   gem 'rubocop-capybara', '2.22.1'
   gem 'rubocop-performance', '1.25'
@@ -53,6 +57,7 @@ group :development, :test do
   gem 'rubocop-rspec', '3.6'
   gem 'selenium-webdriver', '4.34'
   gem 'shoulda-matchers', '6.5'
+  gem 'timecop', '0.9.10'
 end
 
 group :development do

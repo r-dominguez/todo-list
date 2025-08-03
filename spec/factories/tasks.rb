@@ -3,6 +3,7 @@ FactoryBot.define do
     title { Faker::Lorem.sentence }
     description { Faker::Lorem.paragraph }
     completed { false }
-    user { association :user } # Asume que ya tienes una factory para User
+    task_date { 1.hour.from_now }
+    user { association :user }
   end
 end

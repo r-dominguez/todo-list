@@ -25,6 +25,11 @@ RSpec.describe Task, type: :model do
     expect(task.errors[:description]).to include('is too long (maximum is 1000 characters)')
   end
 
+  it 'When task is invalid without a date' do
+    task = build(:task, task_date: nil)
+    expect(task).not_to be_valid
+  end
+
   describe 'associations' do
     it { is_expected.to belong_to(:user) }
   end

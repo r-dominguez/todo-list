@@ -1,7 +1,9 @@
 class Task < ApplicationRecord
-  belongs_to :user
+  enum :notification_preference, { none: 0, thirty_minutes: 1, one_hour: 2,twelve_hours: 3}, default: :none, prefix: true
 
-  validates :title, :description, presence: true
+  belongs_to :user
+  
+  validates :title, :description, :task_date, presence: true
   validates :title, length: { maximum: 100 }
   validates :description, length: { maximum: 1000 }
 
@@ -10,4 +12,5 @@ class Task < ApplicationRecord
   def mark_as_completed!
     update!(completed: true)
   end
+
 end
